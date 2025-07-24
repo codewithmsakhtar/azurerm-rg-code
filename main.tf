@@ -5,6 +5,15 @@ terraform {
       version = "4.37.0"
     }
   }
+
+   backend "azurerm" {
+    
+    resource_group_name  = "rg-shineindia"          
+    storage_account_name = "shineindiasg"                              
+    container_name       = "shineindia-container"                               
+    key                  = "shineindia.tfstate"                
+}
+
 }
 
 provider "azurerm" {
